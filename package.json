@@ -1,0 +1,20 @@
+{
+  "name": "react-router-ssr",
+  "version": "1.0.0",
+  "description": "react router v4 with server rendering",
+  "main": "server.js",
+  "author": "Damon Shen",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
