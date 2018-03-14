@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "exec": "babel-node server.js",
+  "watch": [
+    ".env",
+    ".babelrc"
+
+  ]
+}
