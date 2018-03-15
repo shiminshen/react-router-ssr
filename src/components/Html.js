@@ -5,7 +5,9 @@ const Html = props => {
   console.log(props)
   return (
     <html>
-      <head />
+      <head>
+        <meta name='description' content='react router ssr' />
+      </head>
       <body>{renderRoutes(props.route.routes)}</body>
     </html>
   )
