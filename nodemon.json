@@ -1,4 +1,9 @@
 {
   "verbose": true,
-  "exec": "babel-node server.js"
+  "exec": "babel-node ./src/development.js",
+  "watch": [
+    "development.js",
+    "server.js",
+    "nodemon.json"
+  ]
 }

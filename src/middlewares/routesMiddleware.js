@@ -7,13 +7,25 @@ import routes from '../routes.js'
 
 export default function (req, res, next) {
   const branch = matchRoutes(routes, req.url)
-  const content = renderToString(
-    <Provider store={{}}>
-      <StaticRouter location={req.url} context={{}}>
-        {renderRoutes(routes)}
-      </StaticRouter>
-    </Provider>
-  )
-  res.send(content)
-  next()
+  if (branch.length) {
+    const content = renderToString(
+      <Provider store={{}}>
+        <StaticRouter location={req.url} context={{}}>
+          {renderRoutes(routes)}
+        </StaticRouter>
+      </Provider>
+    )
+    res.send(
+      `<html>
+        <head>
+        </head>
+        <body>
+          <div id="app"> ${content} </div>
+        </body>
+        <script src="/dist/main.js"></script>
+      </html>`
+    )
+  } else {
+    next()
+  }
 }
