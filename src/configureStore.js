@@ -1,4 +1,6 @@
-import { createStore } from 'redux'
-import homeReducer from './components/Home/homeReducer.js'
+import { createStore, applyMiddleware } from 'redux'
+import reducers from './components/Home/homeReducer.js'
+import thunk from 'redux-thunk'
 
-export default createStore()
+export default initialState =>
+  createStore(reducers, initialState, applyMiddleware(thunk))

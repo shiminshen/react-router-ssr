@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
   render () {
+    console.log(this.props.content)
     return (
       <div>
         <h3>Home</h3>
@@ -22,4 +24,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default connect(state => state)(Home)
